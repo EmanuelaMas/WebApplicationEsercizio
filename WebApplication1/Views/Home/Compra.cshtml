@@ -1,0 +1,28 @@
+﻿@model Prodotto
+
+@using (Html.BeginForm())
+{
+    <div >
+        @Html.LabelFor(model=>model.Id)
+        <div>
+            @Html.DisplayFor(model => model.Id)
+        </div>
+    </div>
+
+    <div>
+        @Html.LabelFor(model=>model.Vendor)
+        <div>
+            @Html.DisplayFor(model => model.Vendor)
+        </div>
+    </div>
+
+    <div>
+        @Html.LabelFor(model=>model.Model)
+        <div>
+            @Html.DisplayFor(model => model.Model)
+        </div>
+    </div>
+
+
+   
+}

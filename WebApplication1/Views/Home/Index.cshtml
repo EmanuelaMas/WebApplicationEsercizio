@@ -1,8 +1,48 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<Prodotto>
+
+@{
+    ViewData["Title"] = "Home Page - Login";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">Benvenuti al sito di acquisti</h1>
+
+    @*visualizzare il file json*@
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(item => item.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(item => item.Vendor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(item => item.Model)
+            </th>
+            <th>Azione</th>
+            
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vendor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
+                    @Html.ActionLink("Compra", "Logout", new {id = item.Id})
+                </td>
+                
+            </tr>
+        }
+
+    </table>
+
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>

@@ -1,0 +1,32 @@
+﻿
+@model Prodotto
+
+@using (Html.BeginForm())
+{
+    <div class="text-center">
+        <h1 class="display-4">Acquisto effettuato</h1>
+        <div>
+            @Html.LabelFor(model=>model.Id)
+            <div>
+                @Html.DisplayFor(model => model.Id)
+            </div>
+        </div>
+
+        <div>
+            @Html.LabelFor(model=>model.Vendor)
+            <div>
+                @Html.DisplayFor(model => model.Vendor)
+            </div>
+        </div>
+
+        <div>
+            @Html.LabelFor(model=>model.Model)
+            <div>
+                @Html.DisplayFor(model => model.Model)
+            </div>
+        </div>
+
+        <button onclick="funzioneLogout()">LOGOUT</button>
+    </div>
+
+}

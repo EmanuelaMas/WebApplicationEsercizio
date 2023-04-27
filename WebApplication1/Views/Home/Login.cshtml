@@ -1,0 +1,36 @@
+﻿@model UtenteLoggato
+
+
+<div class="text-center">
+    <h1 class="display-4">Benvenuti al sito di acquisti</h1>
+    <p>effettuare il login per poter accedere al sito</p>
+
+    @using (Html.BeginForm())
+    {
+
+        <div>
+            @Html.LabelFor(model=>model.Username)
+            <div>
+                @Html.EditorFor(model => model.Username)
+            </div>
+        </div>
+
+        <div>
+            @Html.LabelFor(model=>model.Password)
+            <div>
+                @Html.EditorFor(model => model.Password)
+            </div>
+        </div>
+
+        @if (Model.ShowError)
+        {
+            <p class="bg-danger">Credenziali errate</p>
+        }
+
+        <input type="submit" value="Save" />
+    }
+
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
